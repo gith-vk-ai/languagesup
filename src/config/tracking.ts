@@ -11,8 +11,12 @@ export const tracking = {
   /**
    * When true, no tracking script loads until the visitor accepts the cookie
    * banner. The banner is only shown when at least one provider is enabled.
+   * Off for US traffic; turn on if targeting the EU/UK.
    */
-  requireConsent: true,
+  requireConsent: false,
+
+  /** Skip all tracking for browsers sending Global Privacy Control (required in California). */
+  honorGlobalPrivacyControl: true,
 
   /** URL / campaign parameters captured on landing and attached to events. */
   attributionParams: [

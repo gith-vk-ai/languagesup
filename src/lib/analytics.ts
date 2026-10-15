@@ -56,8 +56,15 @@ export function setConsent(value: Consent): void {
   }
 }
 
+function gpcEnabled(): boolean {
+  return (
+    tracking.honorGlobalPrivacyControl &&
+    (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true
+  );
+}
+
 function trackingAllowed(): boolean {
-  if (!hasAnyTracking()) return false;
+  if (!hasAnyTracking() || gpcEnabled()) return false;
   return !tracking.requireConsent || getConsent() === "granted";
 }
 
@@ -74,7 +81,9 @@ export function track(name: EventName, params: EventParams = {}): void {
   const payload = { ...getAttribution(), ...params };
   if (!trackingAllowed()) {
     // Hold events from this page view in case the visitor accepts the banner.
-    if (getConsent() !== "denied" && pending.length < 50) pending.push([name, payload]);
+    if (tracking.requireConsent && !gpcEnabled() && getConsent() !== "denied" && pending.length < 50) {
+      pending.push([name, payload]);
+    }
     return;
   }
   send(name, payload);

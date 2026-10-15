@@ -30,15 +30,15 @@ export default function PrivacyPage() {
       <h2>Quiz answers</h2>
       <p>
         Your quiz answers are stored in your browser&apos;s session storage to show your
-        personalized results. If you have allowed analytics, your answers are also sent to our
+        personalized results. Unless you have opted out (see below), your answers are also sent to our
         analytics tools as events (never together with your name or email, which we don&apos;t
         collect) so we can understand which questions resonate and where people drop off. Our quiz is a reflection tool, not a
         scientific or psychological assessment.
       </p>
       <h2>Analytics, advertising, and campaign data</h2>
       <p>
-        With your consent where required, we may use Google Analytics 4, Google Tag Manager, and
-        the Meta Pixel. We also read campaign parameters from the link that brought you here (for
+        We may use Google Analytics 4, Google Tag Manager, and the Meta Pixel. If your browser sends
+        a Global Privacy Control (GPC) signal, we don&apos;t load these tools. We also read campaign parameters from the link that brought you here (for
         example, UTM tags or ad identifiers) to measure which campaigns perform well. Details are in
         our <a href="/cookies/">Cookie Policy</a>.
       </p>
@@ -59,7 +59,8 @@ export default function PrivacyPage() {
       <p>
         Depending on where you live (for example, California or the European Economic Area), you
         may have rights to access, delete, or object to the processing of your personal
-        information, and to opt out of targeted advertising. Contact us to make a request.
+        information, and to opt out of targeted advertising, including by enabling Global Privacy
+        Control in your browser. Contact us to make a request.
       </p>
       <h2>Children</h2>
       <p>This website is intended for adults and is not directed at children under 16.</p>

@@ -20,11 +20,10 @@ export default function CookiesPage() {
       <p>
         Our quiz saves your answers in your browser&apos;s session storage so you can go back and
         forth between questions and see your results. This data stays in your browser and is
-        cleared when you close the tab. We also store your cookie choice so we don&apos;t ask again
-        on every page.
+        cleared when you close the tab.
       </p>
       <h2>Analytics and advertising technologies</h2>
-      <p>With your consent where required, we may use:</p>
+      <p>We may use:</p>
       <ul>
         <li>
           <strong>Google Analytics 4 / Google Tag Manager</strong> — to understand how visitors use
@@ -47,10 +46,10 @@ export default function CookiesPage() {
       </p>
       <h2>Your choices</h2>
       <p>
-        You can accept or decline non-essential cookies in our banner. To change your choice later,
-        clear this site&apos;s data in your browser settings and the banner will appear again. You
-        can also block or delete cookies through your browser, and opt out of interest-based ads via
-        your Meta and Google ad settings.
+        If your browser sends a Global Privacy Control (GPC) signal, we treat it as a request to opt
+        out and do not load our analytics or advertising tools. You can also block or delete cookies
+        through your browser, and opt out of interest-based ads via your Meta and Google ad
+        settings.
       </p>
       <h2>Contact</h2>
       <p>
