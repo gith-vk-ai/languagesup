@@ -1,10 +1,15 @@
 // Static site served by Cloudflare Workers static assets (no Worker script).
-// Files listed in .assetsignore are never published.
+// The build step exports the Next.js site into ./out, which is what gets published.
+// It runs automatically before `wrangler deploy`, so Cloudflare needs no build command.
 {
   "name": "languagesup",
   "compatibility_date": "2026-10-15",
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
-    "directory": "./",
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   }
 }
